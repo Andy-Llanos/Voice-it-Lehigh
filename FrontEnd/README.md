@@ -1,13 +1,20 @@
-# Frontend
-A static site that talks to the AWS backend.
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
+
+# Run and deploy your AI Studio app
+
+This contains everything you need to run your app locally.
+
+View your app in AI Studio: https://ai.studio/apps/drive/1ewSbnhkFSzQjcv2RN6wuQxop_eyqUAIp
+
+## Run Locally
+
+**Prerequisites:**  Node.js
 
 
-1. Copy `config.example.js` to `config.js`, fill values from CDK outputs.
-2. Serve locally: `python3 -m http.server` → http://localhost:8000
-3. Deploy to GitHub Pages or S3+CloudFront.
-
-
-### GitHub Pages + Custom Domain
-- Add a DNS CNAME: `app.yourdomain.com` → `<your-username>.github.io`.
-- In repo Settings → Pages → set custom domain to `app.yourdomain.com`.
-- Add a `CNAME` file at repo root containing `app.yourdomain.com`.
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
