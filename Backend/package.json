@@ -1,0 +1,13 @@
+{
+"name": "rf-backend",
+"version": "0.1.0",
+"type": "module",
+"dependencies": {
+"@aws-sdk/client-dynamodb": "^3.600.0"
+},
+"devDependencies": {
+"@types/aws-lambda": "^8.10.129",
+"esbuild": "^0.23.0",
+"typescript": "^5.6.3"
+}
+}
