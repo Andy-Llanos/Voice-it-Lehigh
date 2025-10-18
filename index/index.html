@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Hackathon Doc</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --fg: #e7ecf5;
+      --muted: #9aa7bd;
+      --card: #121a2b;
+      --accent: #4f46e5;
+      --accent-2: #22c55e;
+      --border: #1f2a44;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg), #0c1426 45%, #0a0f1c);
+      color: var(--fg);
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 1rem;
+    }
+    .row { display: flex; align-items: center; gap: 1rem; justify-content: space-between; }
+    .title { font-weight: 700; letter-spacing: 0.2px; }
+    .muted { color: var(--muted); font-size: 0.95rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .6rem .9rem; border-radius: .75rem; text-decoration: none; font-weight: 600;
+      border: 1px solid var(--border); color: var(--fg); background: #101933;
+    }
+    .btn:hover { border-color: #334063; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), #7c3aed); border: none; }
+    main { flex: 1; }
+
+    .card {
+      background: linear-gradient(180deg, #0d1527, #0a1323);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h1 { font-size: clamp(1.25rem, 1rem + 1.5vw, 2rem); margin: 0 0 .5rem; }
+    p { line-height: 1.6; }
+
+    .iframe-wrap {
+      position: relative;
+      width: 100%;
+      height: clamp(420px, 70vh, 900px);
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+      overflow: hidden;
+      background: #0b1324;
+    }
+    iframe { width: 100%; height: 100%; border: 0; }
+    footer { border-top: 1px solid var(--border); }
+    code { background: #0e1730; padding: .15rem .35rem; border-radius: .4rem; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap row">
+      <div>
+        <div class="title">My Hackathon Doc</div>
+        <div class="muted">Quick site on GitHub Pages with an embedded Google Doc</div>
+      </div>
+      <!-- Replace BOTH the href and the iframe src with your own links -->
+      <a id="open-doc" class="btn primary" href="https://docs.google.com/document/d/e/PASTE_YOUR_PUBLISHED_ID/pub?embedded=true" target="_blank" rel="noopener">Open in Google Docs ⇗</a>
+    </div>
+  </header>
+
+  <main class="wrap" style="margin-top: 1rem; margin-bottom: 2rem;">
+    <div class="card" style="margin-bottom: 1rem;">
+      <h1>Live Document</h1>
+      <p class="muted">This iframe shows your Google Doc. To make it visible to everyone, in Google Docs go to <strong>File → Share → Publish to web → Embed</strong>, then copy the <em>iframe</em> URL and paste it below.</p>
+      <div class="iframe-wrap">
+        <!-- ✅ Replace the src below with your Doc's published embed URL (ends with /pub?embedded=true) -->
+        <iframe 
+          src="https://docs.google.com/document/d/e/PASTE_YOUR_PUBLISHED_ID/pub?embedded=true"
+          allow="clipboard-write; fullscreen"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Embedded Google Doc">
+        </iframe>
+      </div>
+      <p class="muted" style="margin-top:.75rem">If you prefer not to publish, you can try a share link with <code>.../preview</code>, but viewers may need to sign in and some links won't embed.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">How to swap in your Google Doc</h2>
+      <ol>
+        <li>Open your Google Doc → <strong>File → Share → Publish to web</strong>.</li>
+        <li>Select the <strong>Embed</strong> tab → click <strong>Publish</strong> → copy the <em>iframe</em> code.</li>
+        <li>From that code, copy just the <code>src</code> URL and paste it into:
+          <ul>
+            <li>the <code>href</code> on the purple “Open in Google Docs” button (top right), and</li>
+            <li>the <code>src</code> of the <code>&lt;iframe&gt;</code> above.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem 1rem;">
+      <small class="muted">Built with ♥ for a quick demo. Edit <code>index.html</code> to customize.</small>
+      <a class="btn" href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
