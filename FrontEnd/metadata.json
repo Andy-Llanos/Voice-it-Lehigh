@@ -1,0 +1,5 @@
+{
+  "name": "VoiceIt Lehigh",
+  "description": "An anonymous feedback platform for the Lehigh University community. Students can submit and view feedback for courses, clubs, and other organizations, with access restricted to members. Features include a profanity filter and sentiment analysis powered by Gemini.",
+  "requestFramePermissions": []
+}

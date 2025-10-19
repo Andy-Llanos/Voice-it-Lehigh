@@ -1,65 +1,47 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Campus Feedback</title>
-<link rel="stylesheet" href="styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoiceIt Lehigh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'lehigh-brown': '#502A19',
+              'lehigh-gold': '#C2A45F',
+              'lehigh-light-gold': '#F4E9D8',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-<header>
-<h1>Campus Feedback</h1>
-<div id="auth">
-<button id="signinBtn">Sign In</button>
-<button id="signoutBtn" style="display:none;">Sign Out</button>
-<span id="whoami"></span>
-</div>
-</header>
-
-
-<main>
-<section class="card">
-<h2>Open Room</h2>
-<form id="openRoomForm">
-<label>Target Type
-<select id="targetType">
-<option value="COURSE">COURSE</option>
-<option value="ORG">ORG</option>
-</select>
-</label>
-<label>Target Id <input id="targetId" placeholder="e.g., CSE262 or SHPE" /></label>
-<label>Title <input id="roomTitle" placeholder="Week 6 Lab Feedback" /></label>
-<button type="submit">Open Room</button>
-</form>
-</section>
-
-
-<section class="card">
-<h2>Rooms</h2>
-<div>
-<label>Tenant <input id="tenantId" placeholder="your-campus-id" /></label>
-<button id="loadRooms">Load Rooms</button>
-</div>
-<ul id="rooms"></ul>
-</section>
-
-
-<section class="card" id="roomUI" style="display:none;">
-<h2 id="roomHeader">Room</h2>
-<div class="flex">
-<input id="feedbackText" placeholder="Your feedback..." />
-<select id="anonMode">
-<option value="true">Anonymous to peers</option>
-<option value="false">Show my name</option>
-</select>
-<button id="sendFeedback">Send</button>
-</div>
-<ul id="feedbackList"></ul>
-</section>
-</main>
-
-
-<script src="config.js"></script>
-<script src="app.js"></script>
-</body>
+  <body class="bg-gray-50">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
